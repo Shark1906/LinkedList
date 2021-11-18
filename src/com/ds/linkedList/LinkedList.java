@@ -15,9 +15,9 @@ public class LinkedList {
 	public boolean add(int data) {
 		boolean isAdded = false;
 		
-		Node newNode = new Node(data);
+		Node node = new Node(data);
 		if(head == null) {
-			head = newNode;
+			head = node;
 			isAdded = true;
 		}
 		else {
@@ -25,10 +25,16 @@ public class LinkedList {
 			while(temp.next != null) {
 				temp = temp.next;
 			}
-			temp.next = newNode;
+			temp.next = node;
 			isAdded = true;
 		}
 		return isAdded;
+	}
+	
+	public void push(int data) {
+		Node node = new Node(data);
+		node.next = head;
+		head = node;
 	}
 		
 	public void print() {
