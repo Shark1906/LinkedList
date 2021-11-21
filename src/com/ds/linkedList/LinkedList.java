@@ -127,6 +127,25 @@ public class LinkedList {
 		System.out.println(isFound);
 		return isFound;
 	}
+	
+	public void insertNextToElement(int elememt, int data) {
+		
+		Node node = new Node(data);
+		if(head == null) {
+			System.out.println("List is empty");
+		}
+		Node temp = head;
+		while(temp != null) {
+			
+			if(temp.key == elememt) {
+				Node newNode = temp.next;
+				temp.next = node;
+				node.next = newNode;
+				break;
+			}
+			temp = temp.next;
+		}
+	}
 		
 	public void print() {
 		Node temp = head;
