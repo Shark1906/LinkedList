@@ -10,6 +10,6 @@ public class Main {
 		linkedList.print();
 		linkedList.popLast();
 		linkedList.print();
+		linkedList.search(30);
 	}
-
 }
