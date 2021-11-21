@@ -13,5 +13,7 @@ public class Main {
 		linkedList.search(30);
 		linkedList.insertNextToElement(30, 40);
 		linkedList.print();
+		linkedList.remove(40);
+		linkedList.print();
 	}
 }

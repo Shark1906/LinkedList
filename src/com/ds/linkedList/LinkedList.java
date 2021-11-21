@@ -124,7 +124,12 @@ public class LinkedList {
 			}
 			temp = temp.next;
 		}
-		System.out.println(isFound);
+		if(isFound = true) {
+			System.out.println("Found");
+		}else {
+			System.out.println("Not Found");
+		}
+		
 		return isFound;
 	}
 	
@@ -145,6 +150,34 @@ public class LinkedList {
 			}
 			temp = temp.next;
 		}
+	}
+	
+	public boolean remove(int element) {
+		//70 -> 56 -> 30 -> 90
+		if(!search(element)) {
+			System.out.println("Data not present");
+			return false;
+		}
+		Node temp = head;
+		Node prev = null;
+		if(temp != null && temp.key == element) {
+			head = temp.next;
+			//size--;
+			return true;
+		}
+			
+		while(temp != null) {
+			if(temp.key == element ) {
+				//size--;
+				prev.next = temp.next;
+				return true;
+			}
+			prev = temp;
+			temp = temp.next;
+		}
+		
+		return false;
+		
 	}
 		
 	public void print() {
